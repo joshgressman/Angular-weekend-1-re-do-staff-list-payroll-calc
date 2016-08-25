@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	  <head>
+        <title>Employee Statistics</title>
+				<link rel="stylesheet" href="styles.css"/>
+				<script src="angular.min.js"></script>
+				<script src="jquery-3.1.0.min.js"></script>
+				<script type="text/javascript" src="apps.js"></script>
+
+		</head>
+<body ng-app="myApp">
+	<header>
+	<h1>Employee Informaton & Statistics</h1>
+</header>
+ <div ng-controller="employeeController">
+	<div id="div">
+      <form id="employeeinfo">
+         <label for="employeefirstname">Employee First Name:</label>
+				 <input ng-model="firstname" type="text" id="firstname"/>
+
+				 <label for="employeelastname">Employee Last Name:</label>
+				 <input ng-model="lastname" type="text" id="lastname"/>
+
+				 <label for="employeeidnumber">Employee ID Number:</label>
+				 <input ng-model="id" type= "text"  id="id"/>
+
+				 <label for="employeejobtitle">Employee Job Title:</label>
+				 <input ng-model="jobtitle" type="text" id="jobtitle">
+
+				 <label for="employeesalary">Employee Annual Salary:</label>
+				 <input ng-model="annualsalary" type= "text" id="salary"/>
+
+				 <button id="employeeSubmit" ng-click="add()" ng-reset()>Add Employee</button>
+		  </form>
+	</div>
+	<div id="task-container">
+	<div class="employee-list" ng-repeat="employees in employees">
+   <ul>
+	 <li>First Name: {{employees.firstname}} /Last Name: {{employees.lastname}} /employee ID: {{employees.id}} /Job Title {{employees.jobtitle}} /Annual Salary: {{employees.annualsalary}} /Monthly Payroll Cost: {{employees.annualsalary / 12}} </li>
+ </ul>
+</div>
+<div>
+	<h3>Total Monthly Payroll Cost: {{salary}}</h3>
+</div>
+</div>
+	<footer>
+    <p></p>
+	</footer>
+</body>
+</html>
